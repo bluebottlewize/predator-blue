@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>fonts/dseg14.ttf</file>
         <file>fonts/CyberAlert-xRv8j.otf</file>
         <file>images/cyberbutton.png</file>
         <file>images/cyberbutton_active.png</file>
