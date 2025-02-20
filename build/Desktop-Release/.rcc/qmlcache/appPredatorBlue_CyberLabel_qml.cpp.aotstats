@@ -1,0 +1,60 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 23,
+                        "durationMicroseconds": 69,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 12
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 19,
+                        "durationMicroseconds": 28,
+                        "errorMessage": "Cannot access value for name temperature",
+                        "functionName": "text",
+                        "line": 19
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 34,
+                        "durationMicroseconds": 62,
+                        "errorMessage": "",
+                        "functionName": "horizontalAlignment",
+                        "line": 21
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 32,
+                        "durationMicroseconds": 48,
+                        "errorMessage": "",
+                        "functionName": "verticalAlignment",
+                        "line": 22
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 39,
+                        "durationMicroseconds": 91,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 23
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 37,
+                        "durationMicroseconds": 87,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 24
+                    }
+                ],
+                "filepath": "/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/CyberLabel.qml"
+            }
+        ],
+        "moduleId": "PredatorBlue(appPredatorBlue)"
+    }
+]

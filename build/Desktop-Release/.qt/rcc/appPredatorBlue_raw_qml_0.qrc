@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="/PredatorBlue/">
+    <file alias="Main.qml">/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/Main.qml</file>
+    <file alias="Button.qml">/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/Button.qml</file>
+    <file alias="SpeedoMeter.qml">/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/SpeedoMeter.qml</file>
+    <file alias="CyberLabel.qml">/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/CyberLabel.qml</file>
+    <file alias="CyberNavbar.qml">/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/CyberNavbar.qml</file>
+    <file alias="CyberSelectButton.qml">/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/CyberSelectButton.qml</file>
+    <file alias="CyberSlider.qml">/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/CyberSlider.qml</file>
+    <file alias="assets.qrc">/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/assets.qrc</file>
+  </qresource>
+</RCC>
+

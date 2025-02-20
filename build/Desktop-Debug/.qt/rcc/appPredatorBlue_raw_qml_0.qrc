@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="/PredatorBlue/">
+    <file alias="Main.qml">/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/Main.qml</file>
+    <file alias="assets.qrc">/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/assets.qrc</file>
+  </qresource>
+</RCC>
+

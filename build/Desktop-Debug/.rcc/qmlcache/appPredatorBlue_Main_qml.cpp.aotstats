@@ -1,0 +1,180 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 28,
+                        "durationMicroseconds": 42,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: writer",
+                        "functionName": "onCompleted",
+                        "line": 15
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 16,
+                        "durationMicroseconds": 83,
+                        "errorMessage": "Cannot access value for name Constants",
+                        "functionName": "width",
+                        "line": 31
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 17,
+                        "durationMicroseconds": 70,
+                        "errorMessage": "Cannot access value for name Constants",
+                        "functionName": "height",
+                        "line": 32
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 43,
+                        "durationMicroseconds": 105,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 60
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 47,
+                        "durationMicroseconds": 75,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 75
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 47,
+                        "durationMicroseconds": 72,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 86
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 46,
+                        "durationMicroseconds": 46,
+                        "errorMessage": "",
+                        "functionName": "horizontalAlignment",
+                        "line": 97
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 44,
+                        "durationMicroseconds": 44,
+                        "errorMessage": "",
+                        "functionName": "verticalAlignment",
+                        "line": 98
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 51,
+                        "durationMicroseconds": 71,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 100
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 29,
+                        "durationMicroseconds": 26,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: slider",
+                        "functionName": "target",
+                        "line": 113
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 37,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Cannot resolve property type  for binding on onValueChanged.",
+                        "functionName": "onValueChanged",
+                        "line": 114
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 43,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Cannot resolve property type  for binding on horizontalCenter.",
+                        "functionName": "horizontalCenter",
+                        "line": 122
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 47,
+                        "durationMicroseconds": 78,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 144
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 46,
+                        "durationMicroseconds": 42,
+                        "errorMessage": "",
+                        "functionName": "horizontalAlignment",
+                        "line": 168
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 44,
+                        "durationMicroseconds": 41,
+                        "errorMessage": "",
+                        "functionName": "verticalAlignment",
+                        "line": 169
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 51,
+                        "durationMicroseconds": 77,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 170
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 47,
+                        "durationMicroseconds": 71,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 173
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 43,
+                        "durationMicroseconds": 69,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 177
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 29,
+                        "durationMicroseconds": 12,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: slider1",
+                        "functionName": "target",
+                        "line": 187
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 37,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Cannot resolve property type  for binding on onValueChanged.",
+                        "functionName": "onValueChanged",
+                        "line": 188
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 43,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Cannot resolve property type  for binding on horizontalCenter.",
+                        "functionName": "horizontalCenter",
+                        "line": 195
+                    }
+                ],
+                "filepath": "/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/Main.qml"
+            }
+        ],
+        "moduleId": "PredatorBlue(appPredatorBlue)"
+    }
+]

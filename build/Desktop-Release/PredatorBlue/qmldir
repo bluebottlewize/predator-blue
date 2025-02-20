@@ -1,0 +1,11 @@
+module PredatorBlue
+typeinfo appPredatorBlue.qmltypes
+prefer :/PredatorBlue/
+Main 1.0 Main.qml
+Button 1.0 Button.qml
+SpeedoMeter 1.0 SpeedoMeter.qml
+CyberLabel 1.0 CyberLabel.qml
+CyberNavbar 1.0 CyberNavbar.qml
+CyberSelectButton 1.0 CyberSelectButton.qml
+CyberSlider 1.0 CyberSlider.qml
+

@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>fonts/dseg14.ttf</file>
+        <file>fonts/CyberAlert-xRv8j.otf</file>
+        <file>images/cyberbutton.png</file>
+        <file>images/cyberbutton_active.png</file>
+        <file>images/cyber_label.png</file>
+        <file>images/turbine.png</file>
+        <file>images/cyber_navbar.png</file>
+        <file>images/cyber_close_button.png</file>
+        <file>images/cyber_select_inactive.png</file>
+        <file>images/cyber_select_hover.png</file>
+        <file>images/cyber_select_active.png</file>
+        <file>images/cyber_slider_body.png</file>
+        <file>images/cyber_slider_head.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,196 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-0e91b691b38a9658b8ef.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "PredatorBlue",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "all_aotstats::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_aotstats-Debug-b8b58b7423253d22cb10.json",
+					"name" : "all_aotstats",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Debug-fad7e73f8366f7a736db.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Debug-7512a5bddacb6952bac0.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-Debug-025e9165e3989b59af97.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Debug-eb9ec88f626e1c6169f2.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPredatorBlue::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPredatorBlue-Debug-b3771a2ddf54d3d0e055.json",
+					"name" : "appPredatorBlue",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPredatorBlue_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPredatorBlue_autogen-Debug-3393d31ab685bf14b4e7.json",
+					"name" : "appPredatorBlue_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPredatorBlue_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPredatorBlue_autogen_timestamp_deps-Debug-8414bb44930d043a4b18.json",
+					"name" : "appPredatorBlue_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPredatorBlue_copy_qml::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPredatorBlue_copy_qml-Debug-3f376fe3e0fb25fb1f7e.json",
+					"name" : "appPredatorBlue_copy_qml",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPredatorBlue_copy_res::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPredatorBlue_copy_res-Debug-40dbc911c1d517e29205.json",
+					"name" : "appPredatorBlue_copy_res",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPredatorBlue_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPredatorBlue_qmlimportscan-Debug-2e1fd80722a065e35dd2.json",
+					"name" : "appPredatorBlue_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPredatorBlue_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPredatorBlue_qmllint-Debug-9d477d37888e0f2d2717.json",
+					"name" : "appPredatorBlue_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPredatorBlue_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPredatorBlue_qmllint_json-Debug-3b06beb214dd78e66a82.json",
+					"name" : "appPredatorBlue_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPredatorBlue_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPredatorBlue_qmllint_module-Debug-907fc9ebf5d6f6a08514.json",
+					"name" : "appPredatorBlue_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPredatorBlue_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPredatorBlue_qmltyperegistration-Debug-26278452be2f27f7ef8c.json",
+					"name" : "appPredatorBlue_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "module_appPredatorBlue_aotstats_target::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-module_appPredatorBlue_aotstats_target-Debug-02d2b7013954867d5756.json",
+					"name" : "module_appPredatorBlue_aotstats_target",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/build/Desktop-Debug",
+		"source" : "/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

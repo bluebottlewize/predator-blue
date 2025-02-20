@@ -1,0 +1,14 @@
+-rootPath
+/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue
+-cmake-output
+-output-file
+/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/build/Desktop-Release/.qt/qml_imports/appPredatorBlue_build.cmake
+-importPath
+/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/build/Desktop-Release/PredatorBlue
+-importPath
+/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/build/Desktop-Release
+-importPath
+/usr/lib/qt6/qml
+-qrcFiles
+/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/build/Desktop-Release/.qt/rcc/qmake_PredatorBlue.qrc
+/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/build/Desktop-Release/.qt/rcc/appPredatorBlue_raw_qml_0.qrc

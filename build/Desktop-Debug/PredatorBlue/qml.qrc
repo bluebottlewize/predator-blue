@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>fonts/dseg14.ttf</file>
+    </qresource>
+</RCC>

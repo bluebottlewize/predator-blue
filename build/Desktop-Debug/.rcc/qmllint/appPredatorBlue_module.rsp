@@ -1,0 +1,10 @@
+-I
+/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/build/Desktop-Debug
+-I
+/usr/lib/qt6/qml
+--resource
+/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/build/Desktop-Debug/.qt/rcc/qmake_PredatorBlue.qrc
+--resource
+/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/build/Desktop-Debug/.qt/rcc/appPredatorBlue_raw_qml_0.qrc
+--module
+PredatorBlue

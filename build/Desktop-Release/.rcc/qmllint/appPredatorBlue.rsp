@@ -1,0 +1,16 @@
+--bare
+-I
+/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/build/Desktop-Release
+-I
+/usr/lib/qt6/qml
+--resource
+/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/build/Desktop-Release/.qt/rcc/qmake_PredatorBlue.qrc
+--resource
+/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/build/Desktop-Release/.qt/rcc/appPredatorBlue_raw_qml_0.qrc
+/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/Main.qml
+/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/Button.qml
+/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/SpeedoMeter.qml
+/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/CyberLabel.qml
+/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/CyberNavbar.qml
+/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/CyberSelectButton.qml
+/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/CyberSlider.qml

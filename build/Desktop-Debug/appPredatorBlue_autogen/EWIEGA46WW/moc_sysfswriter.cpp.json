@@ -1,0 +1,54 @@
+{
+    "classes": [
+        {
+            "className": "SysfsWriter",
+            "lineNumber": 6,
+            "methods": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "sayHello",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "cpu_speed",
+                            "type": "int"
+                        },
+                        {
+                            "name": "gpu_speed",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "setFanSpeed",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "name": "getCpuFanSpeed",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "index": 3,
+                    "name": "getGpuFanSpeed",
+                    "returnType": "int"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "SysfsWriter",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "sysfswriter.h",
+    "outputRevision": 68
+}

@@ -1,0 +1,20 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 23,
+                        "durationMicroseconds": 92,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 10
+                    }
+                ],
+                "filepath": "/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/CyberNavbar.qml"
+            }
+        ],
+        "moduleId": "PredatorBlue(appPredatorBlue)"
+    }
+]
