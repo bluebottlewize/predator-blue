@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/">
-    <file alias="/PredatorBlue">/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/build/Desktop-Debug/PredatorBlue</file>
-
-  </qresource>
-</RCC>

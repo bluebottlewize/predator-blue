@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/PredatorBlue">
-    <file alias="qmldir">/home/bluebottle/dev/qt/PredatorBlue/PredatorBlue/build/Desktop-Debug/PredatorBlue/qmldir</file>
-  </qresource>
-</RCC>
-
