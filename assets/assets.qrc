@@ -12,5 +12,7 @@
         <file>images/cyber_select_active.png</file>
         <file>images/cyber_slider_body.png</file>
         <file>images/cyber_slider_head.png</file>
+        <file>images/cyber_slider_body_outline.png</file>
+        <file>images/cyber_slider_body_fill.png</file>
     </qresource>
 </RCC>

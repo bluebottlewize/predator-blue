@@ -1,6 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include "sysfswriter.h"
+#include "headers/sysfswriter.h"
 
 int main(int argc, char *argv[])
 {

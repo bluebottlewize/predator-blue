@@ -22,31 +22,47 @@ Item {
             valueChangedWrapper()
         }
 
-        background: Item {
+        background:
+
+            BorderImage {
+                id: borderImage1
+                source: "qrc:/images/cyber_slider_body_outline.png"
+                // Set border values as needed
+                width: slider.width - 100
+                height: slider.height
+                anchors.horizontalCenter: parent.horizontalCenter
+
+                border.left: 5
+                border.top: 5
+                border.right: 5
+                border.bottom: 5
+
+            Item {
                     id: clipArea
                     // Bind the width to the slider's width times its value (value from 0 to 1)
-                    x: 50
                     width: (slider.width - 100) * slider.value
                     height: slider.height
                     clip: true
 
                     BorderImage {
-                        id: borderImage1
-                        source: "../images/cyber_slider_body.png"
+                        id: borderImage2
+                        source: "qrc:/images/cyber_slider_body_fill.png"
                         // Set border values as needed
-                        width: parent.parent.width - 100
-                        height: parent.parent.height
+                        width: slider.parent.width - 100
+                        height: slider.parent.height
 
                         border.left: 5
                         border.top: 5
                         border.right: 5
                         border.bottom: 5
                     }
+            }
         }
 
+
         handle: BorderImage {
-            id: habdle
-            source: "../images/cyber_slider_head.png"
+            id: handle
+            source: "qrc:/images/cyber_slider_head.png"
             x: slider.leftPadding + slider.visualPosition * (slider.availableWidth - width)
             y: slider.topPadding + slider.availableHeight / 2 - height / 2
 

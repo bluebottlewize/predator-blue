@@ -14,7 +14,7 @@ Item {
     BorderImage {
         id: borderImage
         anchors.fill: parent
-        source: "../images/cyber_select_inactive.png"
+        source: "qrc:/images/cyber_select_inactive.png"
         anchors.rightMargin: 21
         anchors.leftMargin: 22
         anchors.bottomMargin: 22
@@ -25,7 +25,7 @@ Item {
         id: borderImage1
         visible: false
         anchors.fill: parent
-        source: "../images/cyber_select_hover.png"
+        source: "qrc:/images/cyber_select_hover.png"
         anchors.rightMargin: 21
         anchors.topMargin: 32
         anchors.bottomMargin: 22
@@ -36,7 +36,7 @@ Item {
         id: borderImage2
         visible: false
         anchors.fill: parent
-        source: "../images/cyber_select_active.png"
+        source: "qrc:/images/cyber_select_active.png"
         anchors.rightMargin: 0
         anchors.bottomMargin: 0
         anchors.leftMargin: 0

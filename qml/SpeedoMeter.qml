@@ -1,6 +1,5 @@
 import QtQuick
 import QtQuick.Studio.Components 1.0
-import QtQuick3D.Particles3D 6.2
 
 Item {
 

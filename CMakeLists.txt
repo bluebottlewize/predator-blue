@@ -14,22 +14,22 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
 qt_add_executable(appPredatorBlue
-    main.cpp
+    src/main.cpp
 )
 
 qt_add_qml_module(appPredatorBlue
     URI PredatorBlue
     VERSION 1.0
     QML_FILES
-        Main.qml
-        RESOURCES assets.qrc
-        SOURCES sysfswriter.h sysfswriter.cpp
-        QML_FILES CyberButton.qml
-        QML_FILES SpeedoMeter.qml
-        QML_FILES CyberLabel.qml
-        QML_FILES CyberNavbar.qml
-        QML_FILES CyberSelectButton.qml
-        QML_FILES CyberSlider.qml
+        qml/Main.qml
+        RESOURCES assets/assets.qrc
+        SOURCES headers/sysfswriter.h src/sysfswriter.cpp
+        QML_FILES qml/CyberButton.qml
+        QML_FILES qml/SpeedoMeter.qml
+        QML_FILES qml/CyberLabel.qml
+        QML_FILES qml/CyberNavbar.qml
+        QML_FILES qml/CyberSelectButton.qml
+        QML_FILES qml/CyberSlider.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
