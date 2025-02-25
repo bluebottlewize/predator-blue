@@ -7,6 +7,9 @@ set(QML_IMPORT_PATH ${QML_IMPORT_PATH})
 
 find_package(Qt6 REQUIRED COMPONENTS Quick Concurrent)
 
+find_path(NVML_INCLUDE_DIR nvml.h PATHS /usr/include /usr/local/include /opt/cuda/include)
+find_library(NVML_LIB nvidia-ml PATHS /usr/lib /usr/local/lib /opt/cuda/lib64)
+
 # qt_standard_project_setup()
 
 set(CMAKE_AUTOMOC ON)
@@ -43,10 +46,18 @@ set_target_properties(appPredatorBlue PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
-target_link_libraries(appPredatorBlue
-    PRIVATE Qt6::Quick
-    PRIVATE Qt6::Concurrent
-)
+
+
+if (NVML_INCLUDE_DIR AND NVML_LIB)
+    include_directories(${NVML_INCLUDE_DIR})
+    target_link_libraries(appPredatorBlue
+        PRIVATE Qt6::Quick
+        PRIVATE Qt6::Concurrent
+        ${NVML_LIB}
+    )
+else()
+    message(FATAL_ERROR "NVML not found. Please install NVIDIA NVML.")
+endif()
 
 include(GNUInstallDirs)
 install(TARGETS appPredatorBlue

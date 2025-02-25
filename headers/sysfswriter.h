@@ -8,7 +8,6 @@ class SysfsWriter : public QObject {
 public:
     explicit SysfsWriter(QObject *parent = nullptr);
 
-    Q_INVOKABLE QString sayHello() const;
     Q_INVOKABLE void setFanSpeed(int cpu_speed, int gpu_speed) const;
     Q_INVOKABLE int getCpuFanSpeed();
     Q_INVOKABLE int getGpuFanSpeed();

@@ -1,19 +1,11 @@
 #include "headers/sysfswriter.h"
 #include <iostream>
 #include <fstream>
-#include <tensorflow/include/nvml.h>
 #include <QtConcurrent>
 
 using namespace std;
 
 SysfsWriter::SysfsWriter(QObject *parent) : QObject(parent) {}
-
-QString SysfsWriter::sayHello() const {
-
-
-
-    return "Hello from C++!";
-}
 
 void SysfsWriter::setFanSpeed(int cpu_speed, int gpu_speed) const {
     QString sysfs_path = "/sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/fan_speed";
