@@ -1,5 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <iostream>
 #include "headers/sysfswriter.h"
 
 int main(int argc, char *argv[])
@@ -13,6 +14,11 @@ int main(int argc, char *argv[])
 
     qmlRegisterType<SysfsWriter>("org.bluebottle.SysfsWriter", 1, 0, "SysfsWriter");
 
+
+    QString appDir = QCoreApplication::applicationDirPath();
+    engine.addImportPath(appDir + "qrc:/modules");
+    std::cout << appDir.toStdString() << "/qml";
+    // engine.addImportPath("qrc:/");
     engine.loadFromModule("PredatorBlue", "Main");
 
     return app.exec();

@@ -1,5 +1,5 @@
 import QtQuick
-import QtQuick.Studio.Components 1.0
+import "modules"
 
 Item {
 

@@ -1,7 +1,5 @@
 import QtQuick
 import QtQuick.Controls
-import PredatorBlue
-import QtQuick.Studio.Components 1.0
 import QtQuick3D.Particles3D 6.2
 import org.bluebottle.SysfsWriter
 import QtQuick.Layouts

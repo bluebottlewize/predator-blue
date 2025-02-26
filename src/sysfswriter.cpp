@@ -1,7 +1,7 @@
 #include "headers/sysfswriter.h"
 #include <iostream>
 #include <fstream>
-#include <QtConcurrent>
+// #include <QtConcurrent>
 
 using namespace std;
 
