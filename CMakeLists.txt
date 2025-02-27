@@ -10,8 +10,6 @@ find_package(Qt6 REQUIRED COMPONENTS Quick)
 # find_path(NVML_INCLUDE_DIR nvml.h PATHS /usr/include /usr/local/include /opt/cuda/include)
 # find_library(NVML_LIB nvidia-ml PATHS /usr/lib /usr/local/lib /opt/cuda/lib64)
 
-# qt_standard_project_setup()
-
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
@@ -34,6 +32,11 @@ qt_add_qml_module(appPredatorBlue
     QML_FILES qml/modules/EllipseItem.qml
     RESOURCES assets/assets.qrc
     SOURCES headers/sysfswriter.h src/sysfswriter.cpp
+    QML_FILES
+    QML_FILES qml/CyberToggleLeft.qml
+    QML_FILES qml/CyberToggleRight.qml
+    QML_FILES qml/CyberToggleCenter.qml
+    QML_FILES qml/CyberToggleGroup.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
@@ -53,7 +56,6 @@ set_target_properties(appPredatorBlue PROPERTIES
 #     include_directories(${NVML_INCLUDE_DIR})
 #     target_link_libraries(appPredatorBlue
 #         PRIVATE Qt6::Quick
-#         PRIVATE Qt6::Concurrent
 #         ${NVML_LIB}
 #     )
 # else()
@@ -62,7 +64,6 @@ set_target_properties(appPredatorBlue PROPERTIES
 
 target_link_libraries(appPredatorBlue
     PRIVATE Qt6::Quick
-    PRIVATE Qt6::Concurrent
 )
 
 include(GNUInstallDirs)
