@@ -193,6 +193,14 @@ Window {
 
                         }
 
+                        CyberToggleGroup {
+                            Layout.fillWidth: true
+                            Layout.topMargin: 40
+                            Layout.minimumHeight: 50
+                            Layout.preferredHeight: 80
+                            Layout.maximumHeight: 80
+                        }
+
                         SpeedoMeter {
                             id: cpuMeter
                             Layout.fillWidth: true
@@ -275,6 +283,14 @@ Window {
                                 }
                             }
 
+                        }
+
+                        CyberToggleGroup {
+                            Layout.fillWidth: true
+                            Layout.topMargin: 40
+                            Layout.minimumHeight: 50
+                            Layout.preferredHeight: 80
+                            Layout.maximumHeight: 80
                         }
 
                         SpeedoMeter {

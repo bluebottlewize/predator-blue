@@ -14,5 +14,15 @@
         <file>images/cyber_slider_head.png</file>
         <file>images/cyber_slider_body_outline.png</file>
         <file>images/cyber_slider_body_fill.png</file>
+        <file>images/cyber_toggle_group_three.png</file>
+        <file>images/cyber_toggle_right_inactive.png</file>
+        <file>images/cyber_toggle_right_hover.png</file>
+        <file>images/cyber_toggle_right_active.png</file>
+        <file>images/cyber_toggle_left_inactive.png</file>
+        <file>images/cyber_toggle_left_hover.png</file>
+        <file>images/cyber_toggle_left_active.png</file>
+        <file>images/cyber_toggle_center_inactive.png</file>
+        <file>images/cyber_toggle_center_hover.png</file>
+        <file>images/cyber_toggle_center_active.png</file>
     </qresource>
 </RCC>
