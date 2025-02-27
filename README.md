@@ -12,6 +12,18 @@ Cyberpunk themed Linux System Monitor Application for Acer Predator Laptops
 
 - Fan Control (CPU and GPU)
 
+## Build
+
+```
+git clone https://github.com/bluebottlewize/predator-blue
+cd predator-blue
+mkdir build
+cd build
+cmake ..
+cmake --build .
+sudo ./appPredatorBlue
+```
+
 ## Todo
 
 - [ ] Support all features in Linuwu-Sense Module
