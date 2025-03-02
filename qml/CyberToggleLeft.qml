@@ -3,6 +3,7 @@ import QtQuick.Controls 2.15
 
 Item {
     id: item1
+
     MouseArea {
         id: mouseArea
         anchors.fill: parent
@@ -33,17 +34,17 @@ Item {
             id: text1
             color: "#70a2ea"
             text: qsTr("CUSTOM")
-            font.pixelSize: 35
+            font.pixelSize: 30
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
             anchors.verticalCenterOffset: 5
-            font.family: "Cyber Alert"
+            font.family: "Vipnagorgialla"
         }
     }
     states: [
         State {
             name: "hover"
-            when: mouseArea.containsMouse
+            when: mouseArea.containsMouse && !mouseArea.pressed
 
             PropertyChanges {
                 target: borderImageInactive
@@ -52,6 +53,30 @@ Item {
 
             PropertyChanges {
                 target: borderImageHover
+                visible: true
+            }
+
+            PropertyChanges {
+                target: borderImageActive
+                visible: false
+            }
+        },
+        State {
+            name: "active"
+            when: mouseArea.pressed
+
+            PropertyChanges {
+                target: borderImageInactive
+                visible: false
+            }
+
+            PropertyChanges {
+                target: borderImageHover
+                visible: false
+            }
+
+            PropertyChanges {
+                target: borderImageActive
                 visible: true
             }
         }

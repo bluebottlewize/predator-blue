@@ -10,13 +10,35 @@ Window {
 
     property bool initializeCpu: false;
     property bool initializeGpu: false;
+    property bool backlightActive: false
+    property bool lcdoverrideActive: false
+    property bool bootsoundActive: false
+
+
+    Component.onCompleted: {
+        console.log(writer.getCpuFanSpeed());
+        console.log(writer.getGpuFanSpeed());
+        console.log(writer.getBacklightTimeout());
+        cpuSlider.valueWrapper = Math.round(writer.getCpuFanSpeed());
+        gpuSlider.valueWrapper = Math.round(writer.getGpuFanSpeed());
+
+        cpuMeter.level = cpuSlider.valueWrapper
+        gpuMeter.level = gpuSlider.valueWrapper
+
+        initializeCpu = true;
+        initializeGpu = true;
+
+        lcdoverrideActive = writer.getLCDOverdrive();
+        bootsoundActive = writer.getBootAnimationSound();
+        backlightActive = writer.getBacklightTimeout();
+    }
 
     function deactivateAll() {
-        cyberpunkButton.active = false;
-        cyberpunkButton1.active = false;
-        cyberpunkButton2.active = false;
-        cyberpunkButton3.active = false;
-        cyberpunkButton4.active = false;
+        thermalButton.active = false;
+        profileButton.active = false;
+        keyboardButton.active = false;
+        batteryButton.active = false;
+        miscButton.active = false;
     }
 
     Rectangle {
@@ -45,20 +67,13 @@ Window {
         }
 
         FontLoader {
+            id: cyberalert
             source: "qrc:/fonts/CyberAlert-xRv8j.otf"
         }
 
-        Component.onCompleted: {
-            console.log(writer.getCpuFanSpeed());
-            console.log(writer.getGpuFanSpeed());
-            cpuSlider.valueWrapper = Math.round(writer.getCpuFanSpeed());
-            gpuSlider.valueWrapper = Math.round(writer.getGpuFanSpeed());
-
-            cpuMeter.level = cpuSlider.valueWrapper
-            gpuMeter.level = gpuSlider.valueWrapper
-
-            initializeCpu = true;
-            initializeGpu = true;
+        FontLoader{
+            id: vipnagorgialla
+            source: "qrc:/fonts/Vipnagorgialla Rg.otf"
         }
 
         RowLayout
@@ -93,47 +108,41 @@ Window {
                     clip: false
 
                     CyberSelectButton {
-                        id: cyberpunkButton
+                        id: thermalButton
                         displayText: "THERMAL"
+                        active: true
 
                         onCliced: {
                             deactivateAll()
                             active = true
+                            tabsStack.currentIndex = 0
                         }
                     }
 
                     CyberSelectButton {
-                        id: cyberpunkButton1
+                        id: profileButton
                         displayText: "PROFILES"
 
                         onCliced: {
                             deactivateAll()
                             active = true
+                            tabsStack.currentIndex = 1
                         }
                     }
 
                     CyberSelectButton {
-                        id: cyberpunkButton2
+                        id: keyboardButton
                         displayText: "KEYBOARD"
 
                         onCliced: {
                             deactivateAll()
                             active = true
+                            tabsStack.currentIndex = 2
                         }
                     }
 
                     CyberSelectButton {
-                        id: cyberpunkButton3
-                        displayText: "MISC"
-
-                        onCliced: {
-                            deactivateAll()
-                            active = true
-                        }
-                    }
-
-                    CyberSelectButton {
-                        id: cyberpunkButton4
+                        id: batteryButton
                         displayText: "BATTERY"
 
                         onCliced: {
@@ -141,14 +150,28 @@ Window {
                             active = true
                         }
                     }
+
+                    CyberSelectButton {
+                        id: miscButton
+                        displayText: "MISC"
+
+                        onCliced: {
+                            deactivateAll()
+                            active = true
+                            tabsStack.currentIndex = 1
+                        }
+                    }
                 }
             }
 
-            Rectangle {
+            StackLayout {
                 Layout.leftMargin: 10
+                Layout.rightMargin: 40
                 Layout.fillWidth: true
                 Layout.fillHeight: true
-                color: "transparent"
+                id: tabsStack
+                // color: "transparent"
+                currentIndex: 0
 
                 RowLayout
                 {
@@ -162,9 +185,9 @@ Window {
                         Layout.preferredWidth: 600
                         Layout.maximumWidth: 600
                         Layout.fillHeight: true
-                        anchors.top: parent.top
+                        anchors.top: parent.Center
 
-                        spacing: 20
+                        spacing: 0
                         clip: false
 
                         CyberLabel {
@@ -172,11 +195,11 @@ Window {
                             Layout.fillWidth: true
                             Layout.topMargin: 40
                             Layout.minimumHeight: 50
-                            Layout.preferredHeight: 150
-                            Layout.maximumHeight: 150
+                            Layout.preferredHeight: 100
+                            Layout.maximumHeight: 100
 
 
-                            height: 150
+                            height: 100
                             anchors.horizontalCenter: parent.horizontalCenter
 
 
@@ -193,23 +216,27 @@ Window {
 
                         }
 
-                        CyberToggleGroup {
-                            Layout.fillWidth: true
-                            Layout.topMargin: 40
-                            Layout.minimumHeight: 50
-                            Layout.preferredHeight: 80
-                            Layout.maximumHeight: 80
-                        }
+
 
                         SpeedoMeter {
                             id: cpuMeter
-                            Layout.fillWidth: true
                             Layout.topMargin: 40
                             Layout.minimumHeight: 50
-                            Layout.preferredHeight: 500
-                            Layout.maximumHeight: 500
-                            width: 500
+                            Layout.preferredHeight: 400
+                            Layout.maximumHeight: 400
+                            width: 400
+                            height: 400
 
+                            anchors.horizontalCenter: parent.horizontalCenter
+                        }
+
+                        CyberToggleGroup {
+                            Layout.preferredWidth: parent.width - 80
+                            // Layout.fillWidth: true
+                            Layout.topMargin: 40
+                            Layout.minimumHeight: 50
+                            Layout.preferredHeight: 60
+                            Layout.maximumHeight: 60
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
 
@@ -253,10 +280,10 @@ Window {
                         Layout.minimumWidth: 50
                         Layout.preferredWidth: 600
                         Layout.maximumWidth: 600
-                        anchors.top: parent.top
+                        anchors.top: parent.Center
                         // Layout.fillHeight: true
 
-                        spacing: 20
+                        spacing: 0
                         clip: false
 
                         CyberLabel {
@@ -285,22 +312,26 @@ Window {
 
                         }
 
-                        CyberToggleGroup {
-                            Layout.fillWidth: true
-                            Layout.topMargin: 40
-                            Layout.minimumHeight: 50
-                            Layout.preferredHeight: 80
-                            Layout.maximumHeight: 80
-                        }
-
                         SpeedoMeter {
                             id: gpuMeter
-                            Layout.fillWidth: true
                             Layout.topMargin: 40
                             Layout.minimumHeight: 50
-                            Layout.preferredHeight: 500
-                            Layout.maximumHeight: 500
-                            width: 500
+                            Layout.preferredHeight: 400
+                            Layout.maximumHeight: 400
+                            width: 400
+                            height: 400
+
+                            anchors.horizontalCenter: parent.horizontalCenter
+
+                        }
+
+                        CyberToggleGroup {
+                            Layout.preferredWidth: parent.width - 80
+                            // Layout.fillWidth: true
+                            Layout.topMargin: 40
+                            Layout.minimumHeight: 50
+                            Layout.preferredHeight: 60
+                            Layout.maximumHeight: 60
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
 
@@ -338,6 +369,92 @@ Window {
                             }
                         }
 
+                    }
+                }
+
+                ColumnLayout {
+
+                    anchors.fill: parent
+                    spacing: 30
+
+                    anchors.topMargin: 180
+                    anchors.rightMargin: 20
+
+                    RowLayout {
+
+                        Layout.fillWidth: true
+                        spacing: 30
+
+                        CyberMiscItem {
+                            id: lcdItem
+                            Layout.fillWidth: true
+                            x: 730
+                            y: 129
+                            width: 536
+                            height: 379
+                            active: lcdoverrideActive
+
+                            onStateChangedWrapper: {
+                                console.log("hello");
+                                writer.setLCDOverdrive(lcdItem.active);
+                            }
+
+                            heading: "LCD OVERDRIVE"
+                            description: "Reduces LCD latency and minimizes ghosting"
+                        }
+
+                        CyberMiscItem {
+                            id: bootItem
+                            Layout.fillWidth: true
+                            x: 730
+                            y: 129
+                            width: 536
+                            height: 379
+                            active: bootsoundActive
+
+                            onStateChangedWrapper: {
+                                writer.setBootAnimationSound(bootItem.active);
+                            }
+
+                            heading: "BOOT ANIMATION SOUND"
+                            description: "Enables or disables custom boot animation and sound"
+                        }
+
+                    }
+
+                    RowLayout {
+
+                        Layout.fillWidth: true
+                        spacing: 30
+
+                        CyberMiscItem {
+                            id: backlightItem
+                            Layout.fillWidth: true
+                            x: 730
+                            y: 129
+                            width: 536
+                            height: 379
+                            active: backlightActive
+
+                            onStateChangedWrapper: {
+                                writer.setBacklightTimeout(backlightItem.active);
+                            }
+
+                            heading: "BACKLIGHT TIMEOUT"
+                            description: "This feature turns off the keyboard RGB after 30 seconds of idle mode"
+                        }
+
+                        CyberMiscItem {
+                            id: cyberMiscItems4
+                            Layout.fillWidth: true
+                            x: 730
+                            y: 129
+                            width: 536
+                            height: 379
+
+                            heading: "BOOT ANIMATION SOUND"
+                            description: "Enables or disables custom boot animation and sound."
+                        }
                     }
                 }
             }

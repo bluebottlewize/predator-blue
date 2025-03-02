@@ -5,7 +5,7 @@ import QtQuick.Layouts 6.0
 Item {
     id: item1
     width: 800
-    height: 100
+    height: 70
 
     RowLayout {
         id: rowLayout

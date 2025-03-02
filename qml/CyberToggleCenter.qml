@@ -34,11 +34,11 @@ Item {
             id: text2
             color: "#70a2ea"
             text: qsTr("AUTO")
-            font.pixelSize: 35
+            font.pixelSize: 30
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
             anchors.verticalCenterOffset: 5
-            font.family: "Cyber Alert"
+            font.family: "Vipnagorgialla"
         }
     }
     states: [

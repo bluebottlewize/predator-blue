@@ -71,6 +71,7 @@ Item {
         verticalAlignment: Text.AlignVCenter
         font.family: "Cyber Alert"
     }
+
     states: [
         State {
             name: "State1"
@@ -111,10 +112,4 @@ Item {
         }
     ]
 }
-
-/*##^##
-Designer {
-    D{i:0;formeditorZoom:1.75}D{i:1}D{i:2}D{i:3}D{i:4}D{i:5}
-}
-##^##*/
 

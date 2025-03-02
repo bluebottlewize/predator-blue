@@ -114,3 +114,131 @@ int SysfsWriter::getCpuTemperature() {
         return -1;
     }
 }
+
+bool SysfsWriter::getLCDOverdrive()
+{
+    QString sysfs_path = "/sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/lcd_override";
+
+    std::ifstream sysfs_file;
+    sysfs_file.open(sysfs_path.toStdString());
+
+    if (!sysfs_file.is_open()) {
+        std::cerr << "Failed to open sysfs file\n";
+        return -1; // Return error code
+    }
+
+    std::string value_str;
+    std::getline(sysfs_file, value_str);
+    sysfs_file.close();
+
+    try {
+        if (value_str == "1") {
+            return true;
+        }
+        else {
+            return false;
+        }
+    } catch (const std::exception &e) {
+        std::cerr << "Conversion error: " << e.what() << "\n";
+        return false;
+    }
+}
+
+bool SysfsWriter::getBacklightTimeout()
+{
+    QString sysfs_path = "/sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/backlight_timeout";
+
+    std::ifstream sysfs_file;
+    sysfs_file.open(sysfs_path.toStdString());
+
+    if (!sysfs_file.is_open()) {
+        std::cerr << "Failed to open sysfs file\n";
+        return -1; // Return error code
+    }
+
+    std::string value_str;
+    std::getline(sysfs_file, value_str);
+    sysfs_file.close();
+
+    std::cout << value_str;
+
+    try {
+        if (value_str == "1") {
+            return true;
+        }
+        else {
+            return false;
+        }
+    } catch (const std::exception &e) {
+        std::cerr << "Conversion error: " << e.what() << "\n";
+        return false;
+    }
+}
+
+bool SysfsWriter::getBootAnimationSound()
+{
+    QString sysfs_path = "/sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/boot_animation_sound";
+
+    std::ifstream sysfs_file;
+    sysfs_file.open(sysfs_path.toStdString());
+
+    if (!sysfs_file.is_open()) {
+        std::cerr << "Failed to open sysfs file\n";
+        return -1; // Return error code
+    }
+
+    std::string value_str;
+    std::getline(sysfs_file, value_str);
+    sysfs_file.close();
+
+    try {
+        if (value_str == "1") {
+            return true;
+        }
+        else {
+            return false;
+        }
+    } catch (const std::exception &e) {
+        std::cerr << "Conversion error: " << e.what() << "\n";
+        return false;
+    }
+}
+
+void SysfsWriter::setLCDOverdrive(bool enable) {
+    QString sysfs_path = "/sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/lcd_override";
+    std::ofstream sysfs_file(sysfs_path.toStdString());
+
+    if (!sysfs_file.is_open()) {
+        std::cerr << "Failed to open sysfs file for writing\n";
+        return;
+    }
+
+    sysfs_file << (enable ? "1" : "0") << std::endl;
+    sysfs_file.close();
+}
+
+void SysfsWriter::setBacklightTimeout(bool enable) {
+    QString sysfs_path = "/sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/backlight_timeout";
+    std::ofstream sysfs_file(sysfs_path.toStdString());
+
+    if (!sysfs_file.is_open()) {
+        std::cerr << "Failed to open sysfs file for writing\n";
+        return;
+    }
+
+    sysfs_file << (enable ? "1" : "0") << std::endl;
+    sysfs_file.close();
+}
+
+void SysfsWriter::setBootAnimationSound(bool enable) {
+    QString sysfs_path = "/sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/boot_animation_sound";
+    std::ofstream sysfs_file(sysfs_path.toStdString());
+
+    if (!sysfs_file.is_open()) {
+        std::cerr << "Failed to open sysfs file for writing\n";
+        return;
+    }
+
+    sysfs_file << (enable ? "1" : "0") << std::endl;
+    sysfs_file.close();
+}

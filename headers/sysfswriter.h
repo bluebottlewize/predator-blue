@@ -13,6 +13,12 @@ public:
     Q_INVOKABLE int getGpuFanSpeed();
     Q_INVOKABLE int getCpuTemperature();
     Q_INVOKABLE int getGpuTemperature();
+    Q_INVOKABLE bool getLCDOverdrive();
+    Q_INVOKABLE bool getBacklightTimeout();
+    Q_INVOKABLE bool getBootAnimationSound();
+    Q_INVOKABLE void setLCDOverdrive(bool enable);
+    Q_INVOKABLE void setBacklightTimeout(bool enable);
+    Q_INVOKABLE void setBootAnimationSound(bool enable);
 };
 
 #endif // SYSFSWRITER_H

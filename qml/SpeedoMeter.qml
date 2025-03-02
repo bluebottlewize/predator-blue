@@ -7,8 +7,8 @@ Item {
 
     EllipseItem {
         id: ellipse
-        width: 500
-        height: 500
+        width: parent.width
+        height: parent.height
         scale: 1
         strokeStyle: 0
         fillColor: "#110e2f"
@@ -18,7 +18,8 @@ Item {
         BorderImage {
             id: fan
             source: "qrc:/images/turbine.png"
-            width: 500; height: 500
+            width: parent.width
+            height: parent.height
             x: 6
             y: 0
             anchors.horizontalCenter: parent.horizontalCenter
@@ -65,18 +66,17 @@ Item {
 
     EllipseItem {
         id: ellipse1
-        x: 113
-        y: 113
-        width: 275
-        height: 275
+        width: 225
+        height: 225
         fillColor: "#3a3567"
         strokeStyle: 0
         anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
 
         ArcItem {
             id: arc
-            width: 275
-            height: 275
+            width: 225
+            height: 225
             strokeColor: "#70a2ea"
             end: 180 + level * 1.8
             begin: 180 - level * 1.8
@@ -96,11 +96,12 @@ Item {
             height: 154
             color: "#70a2ea"
             text: level
-            font.pixelSize: 95
+            font.pixelSize: 65
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             font.family: "CyberAlert"
             anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
         }
     }
 

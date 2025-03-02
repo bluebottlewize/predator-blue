@@ -24,5 +24,10 @@
         <file>images/cyber_toggle_center_inactive.png</file>
         <file>images/cyber_toggle_center_hover.png</file>
         <file>images/cyber_toggle_center_active.png</file>
+        <file>fonts/Vipnagorgialla Bd.otf</file>
+        <file>fonts/Vipnagorgialla Rg.otf</file>
+        <file>images/cyber_toggle_button_left_active.png</file>
+        <file>images/cyber_toggle_button_right_active.png</file>
+        <file>images/cyber_module_box.png</file>
     </qresource>
 </RCC>
