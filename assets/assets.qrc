@@ -29,5 +29,9 @@
         <file>images/cyber_toggle_button_left_active.png</file>
         <file>images/cyber_toggle_button_right_active.png</file>
         <file>images/cyber_module_box.png</file>
+        <file>images/cyber_mode_quiet.png</file>
+        <file>images/cyber_mode_turbo.png</file>
+        <file>images/cyber_mode_balanced.png</file>
+        <file>images/cyber_mode_heavy.png</file>
     </qresource>
 </RCC>

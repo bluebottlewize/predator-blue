@@ -47,6 +47,7 @@ Item {
                 color: "#1a0136"
                 text: qsTr("OFF")
                 anchors.fill: parent
+                font.family: "Vipnagorgialla"
                 font.pixelSize: 24 * item1.width / 581
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
@@ -70,6 +71,7 @@ Item {
                 color: "#70a2ea"
                 text: qsTr("ON")
                 anchors.fill: parent
+                font.family: "Vipnagorgialla"
                 font.pixelSize: 24 * item1.width / 581
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter

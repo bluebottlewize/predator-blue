@@ -372,6 +372,45 @@ Window {
                     }
                 }
 
+                RowLayout {
+                    // Layout.fillWidth: true
+                    // Layout.fillHeight: true
+                    spacing: 20
+
+                    anchors.fill: parent
+                    anchors.topMargin: 180
+                    anchors.rightMargin: 0
+
+                    CyberModeButton {
+                        width: (parent.width - 20 * 3) / 4;
+
+                        mode: "QUIET"
+                        description: "Perfect for classrooms"
+                        source: "qrc:/images/cyber_mode_quiet.png"
+                    }
+
+                    CyberModeButton {
+                        width: (parent.width - 20 * 3) / 4;
+                        mode: "BALANCED"
+                        description: "Daily use"
+                        source: "qrc:/images/cyber_mode_balanced.png"
+                    }
+
+                    CyberModeButton {
+                        width: (parent.width - 20 * 3) / 4;
+                        mode: "HEAVY"
+                        description: "For heavy workflows"
+                        source: "qrc:/images/cyber_mode_heavy.png"
+                    }
+
+                    CyberModeButton {
+                        width: (parent.width - 20 * 3) / 4;
+                        mode: "TURBO"
+                        description: "CPU and GPU Overclocked"
+                        source: "qrc:/images/cyber_mode_turbo.png"
+                    }
+                }
+
                 ColumnLayout {
 
                     anchors.fill: parent

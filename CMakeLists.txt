@@ -39,6 +39,7 @@ qt_add_qml_module(appPredatorBlue
     QML_FILES qml/CyberToggleGroup.qml
     QML_FILES qml/CyberToggleButton.qml
     QML_FILES qml/CyberMiscItem.qml
+    QML_FILES qml/CyberModeButton.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
