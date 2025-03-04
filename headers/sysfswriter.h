@@ -19,6 +19,10 @@ public:
     Q_INVOKABLE void setLCDOverdrive(bool enable);
     Q_INVOKABLE void setBacklightTimeout(bool enable);
     Q_INVOKABLE void setBootAnimationSound(bool enable);
+    Q_INVOKABLE void setPlatformProfile(const QString& profile);
+    Q_INVOKABLE void setUSBCharging(int value);
+    Q_INVOKABLE void setBatteryLimiter(bool value);
+    Q_INVOKABLE void setBatteryCalibration(bool value);
 };
 
 #endif // SYSFSWRITER_H

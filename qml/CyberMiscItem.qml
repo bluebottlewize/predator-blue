@@ -19,7 +19,7 @@ Item {
         Text {
             id: text1
             height: 44
-            color: "#70a2ea"
+            color: "#7265E3"
             text: heading
             anchors.left: cyberToggleButton.left
             anchors.right: cyberToggleButton.right
@@ -55,7 +55,7 @@ Item {
             anchors.topMargin: 20 * parent.height / 261
 
             height: 80 * parent.height / 261
-            color: "#70a2ea"
+            color: "#7265E3"
             text: description
             font.pixelSize: 16 * parent.height / 261
             wrapMode: Text.WordWrap

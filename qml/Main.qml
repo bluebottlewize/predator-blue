@@ -13,6 +13,7 @@ Window {
     property bool backlightActive: false
     property bool lcdoverrideActive: false
     property bool bootsoundActive: false
+    property int currentTab: 0
 
 
     Component.onCompleted: {
@@ -116,6 +117,7 @@ Window {
                             deactivateAll()
                             active = true
                             tabsStack.currentIndex = 0
+                            currentTab = 0
                         }
                     }
 
@@ -127,6 +129,7 @@ Window {
                             deactivateAll()
                             active = true
                             tabsStack.currentIndex = 1
+                            currentTab = 1
                         }
                     }
 
@@ -138,6 +141,7 @@ Window {
                             deactivateAll()
                             active = true
                             tabsStack.currentIndex = 2
+                            currentTab = 2
                         }
                     }
 
@@ -148,6 +152,8 @@ Window {
                         onCliced: {
                             deactivateAll()
                             active = true
+                            tabsStack.currentIndex = 2
+                            currentTab = 3
                         }
                     }
 
@@ -158,7 +164,8 @@ Window {
                         onCliced: {
                             deactivateAll()
                             active = true
-                            tabsStack.currentIndex = 1
+                            tabsStack.currentIndex = 3
+                            currentTab = 4
                         }
                     }
                 }
@@ -383,10 +390,14 @@ Window {
 
                     CyberModeButton {
                         width: (parent.width - 20 * 3) / 4;
-
                         mode: "QUIET"
                         description: "Perfect for classrooms"
                         source: "qrc:/images/cyber_mode_quiet.png"
+
+                        onClickedWrapper:
+                        {
+                            writer.setPlatformProfile("quiet");
+                        }
                     }
 
                     CyberModeButton {
@@ -394,6 +405,11 @@ Window {
                         mode: "BALANCED"
                         description: "Daily use"
                         source: "qrc:/images/cyber_mode_balanced.png"
+
+                        onClickedWrapper:
+                        {
+                            writer.setPlatformProfile("balanced");
+                        }
                     }
 
                     CyberModeButton {
@@ -401,6 +417,11 @@ Window {
                         mode: "HEAVY"
                         description: "For heavy workflows"
                         source: "qrc:/images/cyber_mode_heavy.png"
+
+                        onClickedWrapper:
+                        {
+                            writer.setPlatformProfile("balanced-performance");
+                        }
                     }
 
                     CyberModeButton {
@@ -408,6 +429,78 @@ Window {
                         mode: "TURBO"
                         description: "CPU and GPU Overclocked"
                         source: "qrc:/images/cyber_mode_turbo.png"
+
+                        onClickedWrapper:
+                        {
+                            writer.setPlatformProfile("performance");
+                        }
+                    }
+                }
+
+                ColumnLayout {
+
+                    id: batterySection
+                    anchors.fill: parent
+                    spacing: 30
+
+                    anchors.topMargin: 180
+                    anchors.rightMargin: 20
+
+                    RowLayout {
+
+                        Layout.fillWidth: true
+                        spacing: 30
+
+                        CyberMiscItem {
+                            id: batterylimiterItem
+                            Layout.fillWidth: true
+                            height: 379
+                            active: lcdoverrideActive
+
+                            onStateChangedWrapper: {
+                                console.log("hello");
+                                writer.setLCDOverdrive(lcdItem.active);
+                            }
+
+                            heading: "BATTERY LIMITER"
+                            description: "Limits battery charging to 80%, preserving battery health for laptops primarily used while plugged into AC power"
+                        }
+
+                        CyberMiscItem {
+                            id: batterycalibrationItem
+                            Layout.fillWidth: true
+                            height: 379
+                            active: bootsoundActive
+
+                            onStateChangedWrapper: {
+                                writer.setBootAnimationSound(bootItem.active);
+                            }
+
+                            heading: "BATTERY CALIBRATION"
+                            description: "This function calibrates your battery to provide a more accurate percentage reading. It involves charging the battery to 100%, draining it to 0%, and recharging it back to 100%. Do not unplug the laptop from AC power during calibration."
+                        }
+
+                    }
+
+                    RowLayout {
+
+                        Layout.fillWidth: true
+                        spacing: 30
+
+                        CyberMiscItem {
+                            id: usbchargingItem
+                            Layout.fillWidth: true
+                            height: 379
+                            width: batterycalibrationItem.width
+                            active: backlightActive
+
+                            onStateChangedWrapper: {
+                                writer.setBacklightTimeout(backlightItem.active);
+                            }
+
+                            heading: "USB CHARGING"
+                            description: "Allows the USB charging port to provide power even when the laptop is off"
+                        }
                     }
                 }
 
@@ -427,9 +520,6 @@ Window {
                         CyberMiscItem {
                             id: lcdItem
                             Layout.fillWidth: true
-                            x: 730
-                            y: 129
-                            width: 536
                             height: 379
                             active: lcdoverrideActive
 
@@ -445,9 +535,6 @@ Window {
                         CyberMiscItem {
                             id: bootItem
                             Layout.fillWidth: true
-                            x: 730
-                            y: 129
-                            width: 536
                             height: 379
                             active: bootsoundActive
 
@@ -468,10 +555,8 @@ Window {
 
                         CyberMiscItem {
                             id: backlightItem
-                            Layout.fillWidth: true
-                            x: 730
-                            y: 129
-                            width: 536
+                            // Layout.fillWidth: true
+                            width: bootItem.width
                             height: 379
                             active: backlightActive
 
@@ -483,17 +568,17 @@ Window {
                             description: "This feature turns off the keyboard RGB after 30 seconds of idle mode"
                         }
 
-                        CyberMiscItem {
-                            id: cyberMiscItems4
-                            Layout.fillWidth: true
-                            x: 730
-                            y: 129
-                            width: 536
-                            height: 379
+                        // CyberMiscItem {
+                        //     id: cyberMiscItems4
+                        //     Layout.fillWidth: true
+                        //     x: 730
+                        //     y: 129
+                        //     width: 536
+                        //     height: 379
 
-                            heading: "BOOT ANIMATION SOUND"
-                            description: "Enables or disables custom boot animation and sound."
-                        }
+                        //     heading: "BOOT ANIMATION SOUND"
+                        //     description: "Enables or disables custom boot animation and sound."
+                        // }
                     }
                 }
             }

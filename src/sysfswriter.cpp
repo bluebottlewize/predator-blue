@@ -242,3 +242,55 @@ void SysfsWriter::setBootAnimationSound(bool enable) {
     sysfs_file << (enable ? "1" : "0") << std::endl;
     sysfs_file.close();
 }
+
+void SysfsWriter::setPlatformProfile(const QString& profile) {
+    QString sysfs_path = "/sys/firmware/acpi/platform_profile";
+    std::ofstream sysfs_file(sysfs_path.toStdString());
+
+    if (!sysfs_file.is_open()) {
+        std::cerr << "Failed to open sysfs file for writing\n";
+        return;
+    }
+
+    sysfs_file << profile.toStdString() << std::endl;
+    sysfs_file.close();
+}
+
+void SysfsWriter::setUSBCharging(int value) {
+    QString sysfs_path = "/sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/usb_charging";
+    std::ofstream sysfs_file(sysfs_path.toStdString());
+
+    if (!sysfs_file.is_open()) {
+        std::cerr << "Failed to open sysfs file for writing\n";
+        return;
+    }
+
+    sysfs_file << value << std::endl;
+    sysfs_file.close();
+}
+
+void SysfsWriter::setBatteryLimiter(bool value) {
+    QString sysfs_path = "/sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/battery_limiter";
+    std::ofstream sysfs_file(sysfs_path.toStdString());
+
+    if (!sysfs_file.is_open()) {
+        std::cerr << "Failed to open sysfs file for writing\n";
+        return;
+    }
+
+    sysfs_file << (value ? "1" : "0") << std::endl;
+    sysfs_file.close();
+}
+
+void SysfsWriter::setBatteryCalibration(bool value) {
+    QString sysfs_path = "/sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/battery_calibration";
+    std::ofstream sysfs_file(sysfs_path.toStdString());
+
+    if (!sysfs_file.is_open()) {
+        std::cerr << "Failed to open sysfs file for writing\n";
+        return;
+    }
+
+    sysfs_file << (value ? "1" : "0") << std::endl;
+    sysfs_file.close();
+}
