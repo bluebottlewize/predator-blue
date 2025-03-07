@@ -31,8 +31,8 @@ qt_add_qml_module(appPredatorBlue
     QML_FILES qml/modules/ArcItem.qml
     QML_FILES qml/modules/EllipseItem.qml
     RESOURCES assets/assets.qrc
+    SOURCES headers/datamodel.h src/datamodel.cpp
     SOURCES headers/sysfswriter.h src/sysfswriter.cpp
-    QML_FILES
     QML_FILES qml/CyberToggleLeft.qml
     QML_FILES qml/CyberToggleRight.qml
     QML_FILES qml/CyberToggleCenter.qml

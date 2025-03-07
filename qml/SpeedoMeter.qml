@@ -73,20 +73,20 @@ Item {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
 
-        ArcItem {
-            id: arc
-            width: 225
-            height: 225
-            strokeColor: "#70a2ea"
-            end: 180 + level * 1.8
-            begin: 180 - level * 1.8
-            capStyle: 0
-            strokeStyle: 1
-            strokeWidth: 16
-            fillColor: "#00000000"
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.verticalCenter: parent.verticalCenter
-        }
+        // ArcItem {
+        //     id: arc
+        //     width: 225
+        //     height: 225
+        //     strokeColor: "#70a2ea"
+        //     end: 180 + level * 1.8
+        //     begin: 180 - level * 1.8
+        //     capStyle: 0
+        //     strokeStyle: 1
+        //     strokeWidth: 16
+        //     fillColor: "#00000000"
+        //     anchors.horizontalCenter: parent.horizontalCenter
+        //     anchors.verticalCenter: parent.verticalCenter
+        // }
 
         Text {
             id: text1
@@ -96,7 +96,7 @@ Item {
             height: 154
             color: "#70a2ea"
             text: level
-            font.pixelSize: 65
+            font.pixelSize: 55
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             font.family: "CyberAlert"

@@ -1,11 +1,80 @@
 #include "headers/sysfswriter.h"
 #include <iostream>
 #include <fstream>
+#include <filesystem>
 // #include <QtConcurrent>
 
 using namespace std;
+namespace fs = std::filesystem;
 
 SysfsWriter::SysfsWriter(QObject *parent) : QObject(parent) {}
+
+string findHwmonPath() {
+    string base_path = "/sys/class/hwmon/";
+
+    // Iterate through all hwmon devices
+    for (const auto& entry : fs::directory_iterator(base_path)) {
+        std::string device_path = entry.path();
+        std::string driver_path = device_path + "/name";
+
+        // Read the "name" file to check if it's the correct driver
+        std::ifstream name_file(driver_path);
+        if (name_file.is_open()) {
+            std::string name;
+            std::getline(name_file, name);
+            name_file.close();
+
+            // Check if this is the Acer WMI driver
+            if (name == "acer") {
+                return device_path;
+            }
+        }
+    }
+
+    return "";  // Return empty string if not found
+}
+
+int SysfsWriter::getCpuFanRPM()
+{
+    std::string hwmon_path = findHwmonPath() + "/fan1_input";
+    if (hwmon_path.empty()) {
+        std::cerr << "Error: Could not find the correct hwmon path!" << std::endl;
+        return -1;
+    }
+
+    std::ifstream sysfs_file(hwmon_path);
+    if (!sysfs_file.is_open()) {
+        std::cerr << "Error: Failed to open " << hwmon_path << std::endl;
+        return -1;
+    }
+
+    int fan_speed = 0;
+    sysfs_file >> fan_speed;
+    sysfs_file.close();
+
+    return fan_speed;
+}
+
+int SysfsWriter::getGpuFanRPM()
+{
+    std::string hwmon_path = findHwmonPath() + "/fan2_input";
+    if (hwmon_path.empty()) {
+        std::cerr << "Error: Could not find the correct hwmon path!" << std::endl;
+        return -1;
+    }
+
+    std::ifstream sysfs_file(hwmon_path);
+    if (!sysfs_file.is_open()) {
+        std::cerr << "Error: Failed to open " << hwmon_path << std::endl;
+        return -1;
+    }
+
+    int fan_speed = 0;
+    sysfs_file >> fan_speed;
+    sysfs_file.close();
+
+    return fan_speed;
+}
 
 void SysfsWriter::setFanSpeed(int cpu_speed, int gpu_speed) const {
     QString sysfs_path = "/sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/fan_speed";

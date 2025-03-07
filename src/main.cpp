@@ -1,6 +1,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
 #include "headers/sysfswriter.h"
+#include "headers/datamodel.h"
 
 int main(int argc, char *argv[])
 {
@@ -12,6 +14,10 @@ int main(int argc, char *argv[])
                      Qt::QueuedConnection);
 
     qmlRegisterType<SysfsWriter>("org.bluebottle.SysfsWriter", 1, 0, "SysfsWriter");
+
+    DataModel dataModel;
+    engine.rootContext()->setContextProperty("dataModel", &dataModel);
+
 
     engine.loadFromModule("PredatorBlue", "Main");
 

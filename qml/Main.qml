@@ -27,8 +27,8 @@ Window {
         cpuSlider.valueWrapper = Math.round(writer.getCpuFanSpeed());
         gpuSlider.valueWrapper = Math.round(writer.getGpuFanSpeed());
 
-        cpuMeter.level = cpuSlider.valueWrapper
-        gpuMeter.level = gpuSlider.valueWrapper
+        // cpuMeter.level = cpuSlider.valueWrapper
+        // gpuMeter.level = gpuSlider.valueWrapper
 
         initializeCpu = true;
         initializeGpu = true;
@@ -211,22 +211,23 @@ Window {
                             Layout.minimumHeight: 50
                             Layout.preferredHeight: 100
                             Layout.maximumHeight: 100
+                            temperature: dataModel.cpuTemp
 
 
                             height: 100
                             anchors.horizontalCenter: parent.horizontalCenter
 
 
-                            Timer {
-                                interval: 1000  // 2 seconds
-                                running: true   // Start automatically
-                                repeat: true    // Keep running indefinitely
-                                onTriggered: {
-                                    // console.log(writer.getGpuTemperature())
-                                    cpuLabel.temperature = writer.getCpuTemperature()
-                                    // cyberLabel.temperature = 0
-                                }
-                            }
+                            // Timer {
+                            //     interval: 1000  // 2 seconds
+                            //     running: true   // Start automatically
+                            //     repeat: true    // Keep running indefinitely
+                            //     onTriggered: {
+                            //         // console.log(writer.getGpuTemperature())
+                            //         cpuLabel.temperature = writer.getCpuTemperature()
+                            //         // cyberLabel.temperature = 0
+                            //     }
+                            // }
 
                         }
 
@@ -240,6 +241,7 @@ Window {
                             Layout.maximumHeight: 400
                             width: 400
                             height: 400
+                            level: dataModel.cpuFanRPM
 
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
@@ -281,7 +283,7 @@ Window {
                             onValueChangedWrapper: {
                                 if (initializeCpu)
                                 {
-                                    cpuMeter.level = cpuSlider.valueWrapper
+                                    // cpuMeter.level = cpuSlider.valueWrapper
                                     sliderTimer.restart()  // Reset the timer on every change
                                 }
                             }
@@ -334,6 +336,7 @@ Window {
                             Layout.maximumHeight: 400
                             width: 400
                             height: 400
+                            level: dataModel.gpuFanRPM
 
                             anchors.horizontalCenter: parent.horizontalCenter
 
@@ -377,7 +380,7 @@ Window {
                             {
                                 if (initializeGpu)
                                 {
-                                    gpuMeter.level = gpuSlider.valueWrapper
+                                    // gpuMeter.level = gpuSlider.valueWrapper
                                     sliderTimer1.restart()  // Reset the timer on every change
                                 }
                             }
