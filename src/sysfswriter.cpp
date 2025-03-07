@@ -256,6 +256,71 @@ void SysfsWriter::setPlatformProfile(const QString& profile) {
     sysfs_file.close();
 }
 
+int SysfsWriter::getUSBCharging() {
+    QString sysfs_path = "/sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/usb_charging";
+    std::ifstream sysfs_file(sysfs_path.toStdString());
+
+    if (!sysfs_file.is_open()) {
+        std::cerr << "Failed to open sysfs file for reading\n";
+        return -1;
+    }
+
+    std::string value;
+    std::getline(sysfs_file, value);
+    sysfs_file.close();
+
+    return QString::fromStdString(value).toInt();
+}
+
+bool SysfsWriter::getBatteryLimiter() {
+    QString sysfs_path = "/sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/battery_limiter";
+    std::ifstream sysfs_file(sysfs_path.toStdString());
+
+    if (!sysfs_file.is_open()) {
+        std::cerr << "Failed to open sysfs file for reading\n";
+        return false;
+    }
+
+    std::string value;
+    std::getline(sysfs_file, value);
+    sysfs_file.close();
+
+    return value == "1";
+}
+
+bool SysfsWriter::getBatteryCalibration() {
+    QString sysfs_path = "/sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/battery_calibration";
+    std::ifstream sysfs_file(sysfs_path.toStdString());
+
+    if (!sysfs_file.is_open()) {
+        std::cerr << "Failed to open sysfs file for reading\n";
+        return false;
+    }
+
+    std::string value;
+    std::getline(sysfs_file, value);
+    sysfs_file.close();
+
+    return value == "1";
+}
+
+QString SysfsWriter::getPlatformProfile() {
+    QString sysfs_path = "/sys/firmware/acpi/platform_profile";
+    std::ifstream sysfs_file(sysfs_path.toStdString());
+
+    if (!sysfs_file.is_open()) {
+        std::cerr << "Failed to open sysfs file for reading\n";
+        return QString();
+    }
+
+    std::string value;
+    std::getline(sysfs_file, value);
+    sysfs_file.close();
+
+    return QString::fromStdString(value);
+}
+
+
 void SysfsWriter::setUSBCharging(int value) {
     QString sysfs_path = "/sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/usb_charging";
     std::ofstream sysfs_file(sysfs_path.toStdString());

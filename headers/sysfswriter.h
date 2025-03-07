@@ -14,14 +14,18 @@ public:
     Q_INVOKABLE int getCpuTemperature();
     Q_INVOKABLE int getGpuTemperature();
     Q_INVOKABLE bool getLCDOverdrive();
-    Q_INVOKABLE bool getBacklightTimeout();
-    Q_INVOKABLE bool getBootAnimationSound();
     Q_INVOKABLE void setLCDOverdrive(bool enable);
+    Q_INVOKABLE bool getBacklightTimeout();
     Q_INVOKABLE void setBacklightTimeout(bool enable);
+    Q_INVOKABLE bool getBootAnimationSound();
     Q_INVOKABLE void setBootAnimationSound(bool enable);
+    Q_INVOKABLE QString getPlatformProfile();
     Q_INVOKABLE void setPlatformProfile(const QString& profile);
+    Q_INVOKABLE int getUSBCharging();
     Q_INVOKABLE void setUSBCharging(int value);
+    Q_INVOKABLE bool getBatteryLimiter();
     Q_INVOKABLE void setBatteryLimiter(bool value);
+    Q_INVOKABLE bool getBatteryCalibration();
     Q_INVOKABLE void setBatteryCalibration(bool value);
 };
 

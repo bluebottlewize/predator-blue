@@ -13,6 +13,10 @@ Window {
     property bool backlightActive: false
     property bool lcdoverrideActive: false
     property bool bootsoundActive: false
+    property bool usbchargingActive: false
+    property bool batterylimiterActive: false
+    property bool batterycalibrationActive: false
+
     property int currentTab: 0
 
 
@@ -32,6 +36,9 @@ Window {
         lcdoverrideActive = writer.getLCDOverdrive();
         bootsoundActive = writer.getBootAnimationSound();
         backlightActive = writer.getBacklightTimeout();
+        usbchargingActive = writer.getUSBCharging();
+        batterylimiterActive = writer.getBatteryLimiter();
+        batterycalibrationActive = writer.getBatteryCalibration();
     }
 
     function deactivateAll() {
@@ -455,7 +462,7 @@ Window {
                             id: batterylimiterItem
                             Layout.fillWidth: true
                             height: 379
-                            active: lcdoverrideActive
+                            active: batterylimiterActive
 
                             onStateChangedWrapper: {
                                 console.log("hello");
@@ -470,7 +477,7 @@ Window {
                             id: batterycalibrationItem
                             Layout.fillWidth: true
                             height: 379
-                            active: bootsoundActive
+                            active: batterycalibrationActive
 
                             onStateChangedWrapper: {
                                 writer.setBootAnimationSound(bootItem.active);
@@ -492,7 +499,7 @@ Window {
                             Layout.fillWidth: true
                             height: 379
                             width: batterycalibrationItem.width
-                            active: backlightActive
+                            active: usbchargingActive
 
                             onStateChangedWrapper: {
                                 writer.setBacklightTimeout(backlightItem.active);
