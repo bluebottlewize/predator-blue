@@ -33,5 +33,16 @@
         <file>images/cyber_mode_turbo.png</file>
         <file>images/cyber_mode_balanced.png</file>
         <file>images/cyber_mode_heavy.png</file>
+        <file>images/cyber_select_inactive_2.png</file>
+        <file>images/cyber_select_hover_2.png</file>
+        <file>images/cyber_select_active_2.png</file>
+        <file>images/cyber_select_inactive_3.png</file>
+        <file>images/cyber_select_hover_3.png</file>
+        <file>images/cyber_select_active_3.png</file>
+        <file>images/cyber_navbar_2.png</file>
+        <file>images/cyber_navbar_3.png</file>
+        <file>images/cyber_toggle_button_right_active_2.png</file>
+        <file>images/assets.qrc</file>
+        <file>images/cyber_toggle_button_left_active_2.png</file>
     </qresource>
 </RCC>

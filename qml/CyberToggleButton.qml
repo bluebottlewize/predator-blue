@@ -14,14 +14,14 @@ Item {
         id: rightActive
         visible: active
         anchors.fill: parent
-        source: "qrc:/images/cyber_toggle_button_right_active.png"
+        source: "qrc:/images/cyber_toggle_button_right_active_2.png"
     }
 
     BorderImage {
         id: leftActive
         visible: !active
         anchors.fill: parent
-        source: "qrc:/images/cyber_toggle_button_left_active.png"
+        source: "qrc:/images/cyber_toggle_button_left_active_2.png"
     }
 
     RowLayout {
@@ -68,7 +68,7 @@ Item {
 
             Text {
                 id: text2
-                color: "#70a2ea"
+                color: "#7265E3"
                 text: qsTr("ON")
                 anchors.fill: parent
                 font.family: "Vipnagorgialla"
@@ -85,7 +85,7 @@ Item {
 
             PropertyChanges {
                 target: text1
-                color: "#70a2ea"
+                color: "#7265E3"
             }
 
             PropertyChanges {

@@ -86,13 +86,16 @@ Window {
 
         RowLayout
         {
-            spacing: 20
+            spacing: 40
             anchors.fill: parent
 
             CyberNavbar
             {
-                height: parent.height - 100
+                // height: parent.height - 500
                 width: 600
+
+                // Layout.preferredHeight: parent.height - 200
+                // Layout.maximumHeight: parent.height - 200
 
                 Layout.fillWidth: true
                 Layout.minimumWidth: 50
@@ -309,6 +312,7 @@ Window {
                             Layout.minimumHeight: 50
                             Layout.preferredHeight: 150
                             Layout.maximumHeight: 150
+                            temperature: dataModel.gpuTemp
 
 
                             height: 150
@@ -321,7 +325,7 @@ Window {
                                 repeat: true    // Keep running indefinitely
                                 onTriggered: {
                                     // console.log(writer.getGpuTemperature())
-                                    gpuLabel.temperature = writer.getGpuTemperature()
+                                    // gpuLabel.temperature = writer.getGpuTemperature()
                                     // cyberLabel.temperature = 0
                                 }
                             }
@@ -469,7 +473,7 @@ Window {
 
                             onStateChangedWrapper: {
                                 console.log("hello");
-                                writer.setLCDOverdrive(lcdItem.active);
+                                writer.setBatteryLimiter(batterylimiterItem.active);
                             }
 
                             heading: "BATTERY LIMITER"
@@ -483,7 +487,7 @@ Window {
                             active: batterycalibrationActive
 
                             onStateChangedWrapper: {
-                                writer.setBootAnimationSound(bootItem.active);
+                                writer.setBatteryCalibration(batterycalibrationItem.active);
                             }
 
                             heading: "BATTERY CALIBRATION"
@@ -505,7 +509,7 @@ Window {
                             active: usbchargingActive
 
                             onStateChangedWrapper: {
-                                writer.setBacklightTimeout(backlightItem.active);
+                                writer.setUSBCharging(batterycalibrationItem.active);
                             }
 
                             heading: "USB CHARGING"

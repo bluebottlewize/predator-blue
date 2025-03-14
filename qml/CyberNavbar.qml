@@ -8,7 +8,7 @@ Item {
     BorderImage {
         id: borderImage
         anchors.fill: parent
-        source: "qrc:/images/cyber_navbar.png"
+        source: "qrc:/images/cyber_navbar_3.png"
         anchors.rightMargin: 0
         anchors.bottomMargin: 0
         anchors.leftMargin: 0
