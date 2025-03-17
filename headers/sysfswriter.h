@@ -29,6 +29,10 @@ public:
     Q_INVOKABLE void setBatteryLimiter(bool value);
     Q_INVOKABLE bool getBatteryCalibration();
     Q_INVOKABLE void setBatteryCalibration(bool value);
+    Q_INVOKABLE bool getTurboboost();
+    Q_INVOKABLE void setTurboboost(bool value);
+    Q_INVOKABLE bool getHyperthreading();
+    Q_INVOKABLE void setHyperthreading(bool value);
 };
 
 #endif // SYSFSWRITER_H

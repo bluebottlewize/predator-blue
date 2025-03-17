@@ -16,6 +16,8 @@ Window {
     property bool usbchargingActive: false
     property bool batterylimiterActive: false
     property bool batterycalibrationActive: false
+    property bool hyperthreadingActive: false
+    property bool turboboostActive: false
 
     property int currentTab: 0
 
@@ -39,6 +41,8 @@ Window {
         usbchargingActive = writer.getUSBCharging();
         batterylimiterActive = writer.getBatteryLimiter();
         batterycalibrationActive = writer.getBatteryCalibration();
+        hyperthreadingActive = writer.getHyperthreading();
+        turboboostActive = writer.getTurboboost();
     }
 
     function deactivateAll() {
@@ -46,6 +50,7 @@ Window {
         profileButton.active = false;
         keyboardButton.active = false;
         batteryButton.active = false;
+        advancedButton.active = false;
         miscButton.active = false;
     }
 
@@ -168,14 +173,26 @@ Window {
                     }
 
                     CyberSelectButton {
-                        id: miscButton
-                        displayText: "MISC"
+                        id: advancedButton
+                        displayText: "ADVANCED"
 
                         onCliced: {
                             deactivateAll()
                             active = true
                             tabsStack.currentIndex = 3
                             currentTab = 4
+                        }
+                    }
+
+                    CyberSelectButton {
+                        id: miscButton
+                        displayText: "MISC"
+
+                        onCliced: {
+                            deactivateAll()
+                            active = true
+                            tabsStack.currentIndex = 4
+                            currentTab = 5
                         }
                     }
                 }
@@ -520,6 +537,54 @@ Window {
 
                 ColumnLayout {
 
+                    id: advancedSection
+                    anchors.fill: parent
+                    spacing: 30
+
+                    anchors.topMargin: 180
+                    anchors.rightMargin: 20
+
+                    RowLayout {
+
+                        Layout.fillWidth: true
+                        spacing: 30
+
+                        CyberMiscItem {
+                            id: hyperthreadingItem
+                            Layout.fillWidth: true
+                            height: 379
+                            active: hyperthreadingActive
+
+                            onStateChangedWrapper: {
+                                console.log("hello");
+                                writer.setHyperthreading(hyperthreadingItem.active);
+                            }
+
+                            heading: "HYPERTHREADING"
+                            description: "Hyperthreading allows a CPU core to run two tasks at once for faster performance"
+                        }
+
+                        CyberMiscItem {
+                            id: turboboostItem
+                            Layout.fillWidth: true
+                            height: 379
+                            active: turboboostActive
+
+                            onStateChangedWrapper: {
+                                writer.setTurboboost(turboboostItem.active);
+                            }
+
+                            heading: "TURBO BOOST"
+                            description: "Turbo Boost dynamically increases your CPU speed when needed for better performance"
+                        }
+
+                    }
+                }
+
+
+                ColumnLayout {
+
+                    id: miscSection
                     anchors.fill: parent
                     spacing: 30
 

@@ -428,3 +428,61 @@ void SysfsWriter::setBatteryCalibration(bool value) {
     sysfs_file << (value ? "1" : "0") << std::endl;
     sysfs_file.close();
 }
+
+bool SysfsWriter::getTurboboost() {
+    QString sysfs_path = "/sys/devices/system/cpu/intel_pstate/no_turbo";
+    std::ifstream sysfs_file(sysfs_path.toStdString());
+
+    if (!sysfs_file.is_open()) {
+        std::cerr << "Failed to open sysfs file for reading\n";
+        return false;
+    }
+
+    std::string value;
+    std::getline(sysfs_file, value);
+    sysfs_file.close();
+
+    return value == "0";
+}
+
+void SysfsWriter::setTurboboost(bool value) {
+    QString sysfs_path = "/sys/devices/system/cpu/intel_pstate/no_turbo";
+    std::ofstream sysfs_file(sysfs_path.toStdString());
+
+    if (!sysfs_file.is_open()) {
+        std::cerr << "Failed to open sysfs file for writing\n";
+        return;
+    }
+
+    sysfs_file << (value ? "0" : "1") << std::endl;
+    sysfs_file.close();
+}
+
+bool SysfsWriter::getHyperthreading() {
+    QString sysfs_path = "/sys/devices/system/cpu/smt/control";
+    std::ifstream sysfs_file(sysfs_path.toStdString());
+
+    if (!sysfs_file.is_open()) {
+        std::cerr << "Failed to open sysfs file for reading\n";
+        return false;
+    }
+
+    std::string value;
+    std::getline(sysfs_file, value);
+    sysfs_file.close();
+
+    return value == "on";
+}
+
+void SysfsWriter::setHyperthreading(bool value) {
+    QString sysfs_path = "/sys/devices/system/cpu/smt/control";
+    std::ofstream sysfs_file(sysfs_path.toStdString());
+
+    if (!sysfs_file.is_open()) {
+        std::cerr << "Failed to open sysfs file for writing\n";
+        return;
+    }
+
+    sysfs_file << (value ? "on" : "off") << std::endl;
+    sysfs_file.close();
+}
