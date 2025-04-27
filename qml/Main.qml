@@ -229,8 +229,8 @@ Window {
                             Layout.fillWidth: true
                             Layout.topMargin: 40
                             Layout.minimumHeight: 50
-                            Layout.preferredHeight: 100
-                            Layout.maximumHeight: 100
+                            Layout.preferredHeight: 150
+                            Layout.maximumHeight: 150
                             temperature: dataModel.cpuTemp
 
 
@@ -263,16 +263,6 @@ Window {
                             height: 400
                             level: dataModel.cpuFanRPM
 
-                            anchors.horizontalCenter: parent.horizontalCenter
-                        }
-
-                        CyberToggleGroup {
-                            Layout.preferredWidth: parent.width - 80
-                            // Layout.fillWidth: true
-                            Layout.topMargin: 40
-                            Layout.minimumHeight: 50
-                            Layout.preferredHeight: 60
-                            Layout.maximumHeight: 60
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
 
@@ -361,16 +351,6 @@ Window {
 
                             anchors.horizontalCenter: parent.horizontalCenter
 
-                        }
-
-                        CyberToggleGroup {
-                            Layout.preferredWidth: parent.width - 80
-                            // Layout.fillWidth: true
-                            Layout.topMargin: 40
-                            Layout.minimumHeight: 50
-                            Layout.preferredHeight: 60
-                            Layout.maximumHeight: 60
-                            anchors.horizontalCenter: parent.horizontalCenter
                         }
 
                         CyberSlider {
