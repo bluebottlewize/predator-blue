@@ -42,7 +42,6 @@
         <file>images/cyber_navbar_2.png</file>
         <file>images/cyber_navbar_3.png</file>
         <file>images/cyber_toggle_button_right_active_2.png</file>
-        <file>images/assets.qrc</file>
         <file>images/cyber_toggle_button_left_active_2.png</file>
     </qresource>
 </RCC>
